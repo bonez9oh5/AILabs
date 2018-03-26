@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     Rigidbody rb;
     GameObject enemy =  null;
     StateManager sm;
+    BallScript ball;
 
     int state;
     float dist;
@@ -29,19 +30,39 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        
         sm = FindObjectOfType<StateManager>();
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Target");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
         ballInHand = false;
+        ball = null;
+        if (transform.position.x > 250.0f)
+        {
+            gameObject.tag = "Enemy";
+
+        }
+        else if (transform.position.x < 250.0f)
+        {
+            gameObject.tag = "Player";
+        }
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        state = sm.GetState();
+
+        if (ballInHand)
+        {
+            ball = GetComponentInChildren<BallScript>();
+
+        }
+        else
+        {
+            ball = null;
+        }
+            state = sm.GetState();
         Debug.DrawRay(transform.position, Vector3.forward, Color.red);
 
         switch (state)
@@ -118,4 +139,6 @@ public class Player : MonoBehaviour
             ballInHand = true;
         }
     }
+
+    
 }

@@ -208,7 +208,7 @@ MonoBehaviour:
   target: {fileID: 0}
   player: {fileID: 0}
   attackDistance: 40
-  enemy: {fileID: 0}
+  enemy: []
 --- !u!4 &174474195
 Transform:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 588965012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 127, y: 30, z: 288.5}
+  m_LocalPosition: {x: 149.7, y: 30, z: 288.5}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 811695553}
@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 1414328738}
   - component: {fileID: 1414328737}
   - component: {fileID: 1414328741}
+  - component: {fileID: 1414328742}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Target
@@ -576,6 +577,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1414328742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414328736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607a8547f5d87fa40b04fe455df53ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1422834884
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,11 @@ public class StateManager : MonoBehaviour {
     [SerializeField]
     GameObject target;
     [SerializeField]
-    Player player;
+    Player player = null;
     [SerializeField]
     float attackDistance = 2.0f;
     [SerializeField]
-    GameObject enemy;
+    GameObject[] enemy;
 
     // Use this for initialization
     void Start () {
@@ -32,7 +32,7 @@ public class StateManager : MonoBehaviour {
 
         if (GameObject.FindGameObjectWithTag("Enemy") == true)
         {
-            enemy = GameObject.FindGameObjectWithTag("Enemy");
+            enemy = GameObject.FindGameObjectsWithTag("Enemy");
         }
         else
         {
@@ -64,7 +64,7 @@ public class StateManager : MonoBehaviour {
         }
         else if(player.GetDist() > attackDistance)
         {
-            if (enemy)
+            if (enemy[0] != null)
             {
                 newState = 2;
                 StateTransition();
